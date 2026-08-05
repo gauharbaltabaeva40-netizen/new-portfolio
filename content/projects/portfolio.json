@@ -2,5 +2,5 @@
   { title: "ADAL AVTO", description: "СТО Қызметі", category: "Лендинг сайт", image: "adal.png" },
   { title: "DELICIOUS", description: "Мейрамханаға арналган", category: "Көпбеттік сайт", image: "deli.png" },
   { title: "SAPAR-DUKEN", description: "Азық-түлік дүкені", category: "Интернет-дүкен", image: "sapar.png" },
-  { title: "SMILE", description: "Тіс емдеу орталығы", category: "Курс платформасы", image: "assets/images/smile.png" }
+  { title: "SMILE", description: "Тіс емдеу орталығы", category: "Курс платформасы", image: "smile1.png" }
 ]
