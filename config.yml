@@ -1,0 +1,20 @@
+backend:
+  name: github
+  repo: gauharbaltabaeva40-netizen/new-portfolio # Мұнда сіздің репозиторий атыңыз тұруы керек!
+  branch: main # Сіздің негізгі тармағыңыз (main немесе master)
+  site_domain: bekzat-kz.vercel.app # Сайтыңыздың домені
+
+media_folder: "assets/images" # Суреттер сақталатын папка
+public_folder: "/assets/images"
+
+collections:
+  - name: "projects"
+    label: "Жұмыстар"
+    folder: "content/projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Жоба атауы", name: "title", widget: "string" }
+      - { label: "Сипаттамасы", name: "description", widget: "string" }
+      - { label: "Санаты (мысалы: Лендинг)", name: "category", widget: "string" }
+      - { label: "Сурет", name: "image", widget: "image" }
