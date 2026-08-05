@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Бекзат Шеметаев | Портфолио</title>
 
-    <!-- Google Fonts: Space Grotesk -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -18,12 +18,12 @@
 
     <style>
         /* ============================================================
-           БАРЛЫҚ CSS СТИЛЬДЕРІ
+           СТИЛЬДЕР МЫНА ЖЕРДЕ (HEAD - STYLE) ОРНАЛАСҚАН!
            ============================================================ */
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Space Grotesk', sans-serif; /* Бұл шрифт қосылды */
             background-color: #0A0A0A;
             color: #FFFFFF;
             line-height: 1.6;
@@ -31,58 +31,106 @@
             overflow-x: hidden;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-            width: 100%;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; width: 100%; }
 
-        /* 1. HERO - Басты бет */
-                /* 1. HERO - Басты бет (ЖАҢАРТЫЛҒАН) */
+        /* 1. HERO СТИЛЬДЕРІ (ТЕКСТ ПЕН КНОПКАЛАР) */
         .hero { display: flex; align-items: center; justify-content: space-between; min-height: 90vh; gap: 60px; padding: 40px 0; overflow: hidden; }
-        .hero-text { flex: 1; z-index: 2; } /* Текстің алатын орны */
-        .hero-image { 
-            flex: 1.5; /* Фотоға көбірек орын беру (1-ге қарсы 1.5) */
-            display: flex; justify-content: flex-end; align-items: flex-end; 
-            height: 90vh; overflow: hidden; position: relative; 
-        }
-        .hero-image img {
-            /* Фото қиылмайды, бірақ оң жақтағы бос орынды толығымен басады */
-            width: 100%; 
-            height: 100%; 
-            max-height: 90vh;
-            object-fit: contain; 
-            object-position: right bottom;
-        }
-        .hero-image::after {
-            content: ''; position: absolute; bottom: 0; left: 0; right: 0;
-            height: 20%; background: linear-gradient(to top, #0A0A0A 0%, transparent 100%);
-            pointer-events: none;
+        .hero-text { flex: 1; z-index: 2; }
+        
+        /* ҮЛКЕН ТАҚЫРЫП (БЕКЗАТ ШЕМЕТАЕВ) */
+        .hero-text h1 {
+            font-size: 5.5rem;
+            font-weight: 700;
+            line-height: 1.05;
+            letter-spacing: -2px;
+            margin-bottom: 12px;
+            color: #FFFFFF;
         }
 
-        /* БӨЛГІШ */
+        /* АҚ-ҚЫЗҒЫЛТ САРЫ ЖАРҚЫЛДАҒАН МӘТІН (Веб-разработчик & Дизайнер) */
+        .shimmer-text {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #FFFFFF;
+            background: linear-gradient(90deg, #fff 30%, #E8601C 50%, #fff 70%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 4s linear infinite;
+            display: inline-block;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+
+        /* СИПАТТАМА МӘТІНІ */
+        .hero-text .description {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 480px;
+            margin: 24px 0 36px;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        /* КНОПКАЛАР */
+        .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+
+        .btn-primary {
+            background: #E8601C; /* ҚЫЗҒЫЛТ САРЫ ФОН */
+            color: #FFFFFF;       /* АҚ МӘТІН */
+            border: none;
+            padding: 16px 38px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.25s, box-shadow 0.3s;
+            box-shadow: 0 4px 24px rgba(232, 96, 28, 0.3);
+            font-family: inherit;
+        }
+        .btn-primary:hover { transform: scale(1.04); box-shadow: 0 8px 40px rgba(232, 96, 28, 0.45); }
+
+        .btn-outline {
+            background: transparent;
+            color: #FFFFFF;
+            border: 1.5px solid rgba(255, 255, 255, 0.15);
+            padding: 16px 38px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.25s, border-color 0.3s, background 0.3s;
+            font-family: inherit;
+        }
+        .btn-outline:hover { transform: scale(1.04); border-color: #E8601C; background: rgba(232, 96, 28, 0.06); }
+
+        /* === ФОТО СТИЛІ (ҮЛКЕН БОЛУ ҮШІН) === */
+        .hero-image { flex: 1.5; display: flex; justify-content: flex-end; align-items: flex-end; height: 90vh; overflow: hidden; position: relative; }
+        .hero-image img { width: 100%; height: 100%; max-height: 90vh; object-fit: contain; object-position: right bottom; }
+        .hero-image::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 20%; background: linear-gradient(to top, #0A0A0A 0%, transparent 100%); pointer-events: none; }
+
+        /* ===== ҚАЛҒАН CSS (Төменгі бөліктер өзгеріссіз) ===== */
         .divider { display: flex; justify-content: center; align-items: center; padding: 20px 0 30px; }
         .divider-line { width: 80px; height: 2px; background: linear-gradient(to right, transparent, #E8601C, transparent); border-radius: 2px; opacity: 0.6; }
 
-        /* 2. ЕРЕКШЕ ЖҰМЫСТАРЫМ */
         .featured-section { padding: 40px 0 80px; }
         .section-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 48px; flex-wrap: wrap; gap: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); padding-bottom: 20px; }
         .section-header h2 { font-size: 2.2rem; font-weight: 700; letter-spacing: -1px; color: #FFFFFF; }
         .featured-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
 
-        .featured-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 12px; overflow: hidden; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.08); cursor: default; }
+        .featured-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 12px; overflow: hidden; transition: transform 0.3s ease; box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.08); cursor: default; }
         .featured-card:hover { transform: translateY(-6px); border-color: rgba(232, 96, 28, 0.25); box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2); }
-
         .card-image { width: 100%; aspect-ratio: 16 / 9; background-color: #1a1a1a; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; color: #555; font-weight: 600; font-size: 1.2rem; letter-spacing: 1px; }
         .card-image .fallback-text { background: rgba(0, 0, 0, 0.5); padding: 8px 18px; border-radius: 8px; color: #888; font-weight: 600; font-size: 1rem; letter-spacing: 2px; backdrop-filter: blur(4px); border: 1px solid rgba(255, 255, 255, 0.05); }
-
         .card-body { padding: 20px 24px 24px; }
         .card-body h3 { font-size: 1.3rem; font-weight: 600; margin-bottom: 6px; color: #FFFFFF; letter-spacing: -0.3px; }
         .project-description { font-size: 0.95rem; color: rgba(255, 255, 255, 0.6); line-height: 1.5; margin-bottom: 8px; font-weight: 400; }
         .category { display: inline-block; font-size: 0.75rem; font-weight: 600; color: #E8601C; text-transform: uppercase; letter-spacing: 0.8px; background: rgba(232, 96, 28, 0.10); padding: 4px 14px; border-radius: 50px; border: 1px solid rgba(232, 96, 28, 0.15); }
 
-        /* 3. MARQUEE */
         .marquee-section { padding: 30px 0; border-top: 1px solid rgba(255, 255, 255, 0.05); border-bottom: 1px solid rgba(255, 255, 255, 0.05); overflow: hidden; background: #0A0A0A; }
         .marquee-wrapper { display: flex; align-items: center; gap: 40px; white-space: nowrap; animation: marqueeScroll 25s linear infinite; will-change: transform; }
         .marquee-item { display: flex; align-items: center; gap: 24px; font-size: 2.8rem; font-weight: 700; letter-spacing: 4px; color: #FFFFFF; text-transform: uppercase; }
@@ -90,19 +138,17 @@
         .marquee-item .separator { color: rgba(255, 255, 255, 0.1); font-size: 2.4rem; }
         @keyframes marqueeScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-        /* 4. ЖЕТІСТІКТЕРІМ */
         .stats-section { padding: 60px 0 80px; }
         .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-        .stat-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 12px; padding: 32px 24px; text-align: center; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.08); cursor: default; }
+        .stat-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 12px; padding: 32px 24px; text-align: center; transition: transform 0.3s ease; box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.08); cursor: default; }
         .stat-card:hover { transform: translateY(-6px); border-color: rgba(232, 96, 28, 0.25); box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2); }
         .stat-icon { font-size: 2.2rem; color: #E8601C; margin-bottom: 12px; }
         .stat-number { font-size: 3.2rem; font-weight: 700; color: #FFFFFF; letter-spacing: -1px; line-height: 1.1; }
         .stat-label { font-size: 1rem; color: rgba(255, 255, 255, 0.6); font-weight: 500; margin-top: 6px; }
 
-        /* 5. БАҒАЛАР */
         .pricing-section { padding: 60px 0 80px; border-top: 1px solid rgba(255, 255, 255, 0.05); }
         .pricing-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-        .price-card { background: rgba(255, 255, 255, 0.04); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; padding: 24px 28px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5); transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column; }
+        .price-card { background: rgba(255, 255, 255, 0.04); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; padding: 24px 28px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5); transition: transform 0.3s ease; display: flex; flex-direction: column; }
         .price-card:hover { transform: translateY(-8px); border-color: rgba(232, 96, 28, 0.4); box-shadow: 0 0 30px rgba(232, 96, 28, 0.1); }
         .price-header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid rgba(255, 255, 255, 0.06); padding-bottom: 16px; margin-bottom: 20px; }
         .price-title { font-size: 1.6rem; font-weight: 700; line-height: 1.2; color: #FFFFFF; }
@@ -111,7 +157,6 @@
         .price-features li { display: flex; align-items: center; font-size: 0.95rem; color: rgba(255, 255, 255, 0.7); }
         .price-features li i { color: #E8601C; margin-right: 12px; font-size: 0.9rem; }
 
-        /* 6. БАЙЛАНЫС */
         .contact-section { padding: 60px 0 80px; border-top: 1px solid rgba(255, 255, 255, 0.05); }
         .contact-wrapper { display: flex; justify-content: center; }
         .contact-form { max-width: 560px; width: 100%; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 12px; padding: 40px 36px; box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.08); }
@@ -119,17 +164,16 @@
         .contact-form .form-subtitle { font-size: 0.95rem; color: rgba(255, 255, 255, 0.5); text-align: center; margin-bottom: 32px; }
         .form-group { margin-bottom: 20px; }
         .form-group label { display: block; font-size: 0.85rem; font-weight: 500; color: rgba(255, 255, 255, 0.7); margin-bottom: 6px; }
-        .form-group input, .form-group select { width: 100%; padding: 14px 16px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; color: #FFFFFF; font-family: inherit; font-size: 1rem; transition: border-color 0.3s, box-shadow 0.3s; outline: none; }
+        .form-group input, .form-group select { width: 100%; padding: 14px 16px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; color: #FFFFFF; font-family: inherit; font-size: 1rem; transition: border-color 0.3s; outline: none; }
         .form-group input:focus, .form-group select:focus { border-color: #E8601C; box-shadow: 0 0 0 3px rgba(232, 96, 28, 0.15); }
         .form-group select option { background: #0A0A0A; color: #FFFFFF; }
         .form-group input::placeholder { color: rgba(255, 255, 255, 0.3); }
-        .btn-submit { width: 100%; padding: 16px; background: #E8601C; color: #fff; border: none; border-radius: 12px; font-weight: 600; font-size: 1.05rem; cursor: pointer; transition: transform 0.25s, box-shadow 0.3s; box-shadow: 0 4px 24px rgba(232, 96, 28, 0.3); font-family: inherit; margin-top: 8px; }
+        .btn-submit { width: 100%; padding: 16px; background: #E8601C; color: #fff; border: none; border-radius: 12px; font-weight: 600; font-size: 1.05rem; cursor: pointer; transition: transform 0.25s; box-shadow: 0 4px 24px rgba(232, 96, 28, 0.3); font-family: inherit; margin-top: 8px; }
         .btn-submit:hover { transform: scale(1.02); box-shadow: 0 8px 40px rgba(232, 96, 28, 0.45); }
         .form-success { display: none; text-align: center; padding: 20px 0; }
         .form-success i { font-size: 3rem; color: #22c55e; margin-bottom: 12px; }
         .form-success p { font-size: 1.1rem; color: rgba(255, 255, 255, 0.7); }
 
-        /* 7. FOOTER */
         .footer-section { padding: 40px 0 20px; border-top: 1px solid rgba(255, 255, 255, 0.05); margin-top: 20px; }
         .footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
         .footer-brand h3 { font-size: 1.2rem; font-weight: 600; color: #FFFFFF; margin-bottom: 2px; }
@@ -139,7 +183,6 @@
         .footer-socials a:hover { color: #E8601C; transform: translateY(-3px); }
         .footer-copy { width: 100%; text-align: center; font-size: 0.8rem; color: rgba(255, 255, 255, 0.3); padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.05); }
 
-        /* АДАПТИВ */
         @media screen and (max-width: 1024px) {
             .hero-text h1 { font-size: 4rem; }
             .shimmer-text { font-size: 1.3rem; }
@@ -156,7 +199,6 @@
             .hero-text .description { font-size: 1rem; max-width: 100%; margin-left: auto; margin-right: auto; }
             .hero-buttons { justify-content: center; }
             
-            /* Телефондағы сурет (қиылмайды) */
             .hero-image { height: 60vh !important; width: 100%; align-items: flex-end !important; justify-content: center !important; }
             .hero-image img { height: 60vh !important; width: 100% !important; object-fit: contain !important; object-position: center bottom !important; }
 
@@ -252,14 +294,13 @@
     </div>
 
     <!-- ========================================= -->
-    <!-- 2. ЕРЕКШЕ ЖҰМЫСТАРЫМ (ДИНАМИКАЛЫҚ) -->
+    <!-- 2. ЕРЕКШЕ ЖҰМЫСТАРЫМ -->
     <!-- ========================================= -->
     <section class="featured-section container" data-aos="fade-up" data-aos-duration="800">
         <div class="section-header" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
             <h2>ЕРЕКШЕ ЖҰМЫСТАРЫМ</h2>
         </div>
 
-        <!-- Статикалық карталарды алып тастап, орнына ID қойдық -->
         <div class="featured-grid" id="projectContainer">
             <!-- Карталар JavaScript арқылы толтырылады -->
         </div>
@@ -403,13 +444,11 @@
         document.addEventListener('DOMContentLoaded', function() {
             AOS.init({ once: true, offset: 100 });
 
-            // Кнопкалар
             const worksBtn = document.getElementById('scrollToWorks');
             const contactBtn = document.getElementById('scrollToContact');
             if (worksBtn) worksBtn.addEventListener('click', function(e){ e.preventDefault(); document.querySelector('.featured-section').scrollIntoView({ behavior: 'smooth', block: 'start' }); });
             if (contactBtn) contactBtn.addEventListener('click', function(e){ e.preventDefault(); document.querySelector('.contact-section').scrollIntoView({ behavior: 'smooth', block: 'start' }); });
 
-            // Санау анимациясы
             function animateCounter(el, target, suffix, duration = 2000) {
                 let startTime = null; const cleanTarget = parseInt(target, 10);
                 function step(timestamp) {
@@ -436,17 +475,14 @@
                 countElements.forEach(el => observer.observe(el));
             }
 
-            // === ЖҰМЫСТАРДЫ АДМИНКАДАН ЖҮКТЕУ (Динамикалық) ===
             async function loadProjects() {
                 try {
-                    // GitHub-тан JSON деректерін алу (админка орнатқаннан кейін жұмыс істейді)
                     const response = await fetch('content/projects/portfolio.json'); 
                     if (!response.ok) throw new Error('Жобалар табылмады');
                     const projects = await response.json();
                     renderProjects(projects);
                 } catch (error) {
-                    // Егер JSON әлі жоқ болса, уақытша көрсету үшін мына жерге статикалық деректер жазамыз:
-                    console.log('Админкадан әзірге дерек жүктелмеді, уақытша деректер көрсетіледі.');
+                    console.log('Уақытша деректер көрсетіледі.');
                     const fallbackProjects = [
                         { title: "MESRA", description: "Стартаптарға арналған презентациялық лендинг беті.", category: "Лендинг сайт", image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=600" },
                         { title: "ДЕНСАУЛЫҚТЫ КӨТЕРУ", description: "Саулық саласындағы онлайн-қызметтерге арналған көпбеттік сайт.", category: "Көпбеттік сайт", image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600" },
@@ -457,10 +493,9 @@
                 }
             }
 
-            // Жобаларды көрсететін функция
             function renderProjects(projects) {
                 const container = document.getElementById('projectContainer');
-                container.innerHTML = ''; // Тазалау
+                container.innerHTML = ''; 
                 projects.forEach((project, index) => {
                     const delay = 150 + (index * 100);
                     const card = document.createElement('div');
@@ -480,15 +515,12 @@
                     `;
                     container.appendChild(card);
                 });
-                // Жаңа карталарға AOS анимациясын қайта жаңарту
                 AOS.refresh(); 
             }
 
-            // Жобаларды жүктеуді бастау
             loadProjects();
         });
 
-        // WhatsApp жіберу
         function sendToWhatsApp(event) {
             event.preventDefault();
             const name = document.getElementById('clientName').value.trim();
