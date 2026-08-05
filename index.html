@@ -312,18 +312,18 @@
     <section class="marquee-section" data-aos="fade-up" data-aos-duration="800">
         <div class="marquee-wrapper">
             <div class="marquee-item">
-                <span>✦</span> <span class="accent">САПАЛЫ ЖОБА</span> <span class="separator"></span>
-                <span>✦</span> <span class="accent">САПАЛЫ ЖОБА</span> <span class="separator"></span>
-                <span>✦</span> <span class="accent">САПАЛЫ ЖОБА</span> <span class="separator"></span>
-                <span>✦</span> <span class="accent">САПАЛЫ ЖОБА</span> <span class="separator"></span>
-                <span>✦</span> <span class="accent">САПАЛЫ ЖОБА</span> <span class="separator"></span>
+                <span>✦</span> <span class="accent">САПАЛЫ ЖОБА</span> <span class="separator">—</span>
+                <span>✦</span> <span class="accent">САПАЛЫ ЖОБА</span> <span class="separator">—</span>
+                <span>✦</span> <span class="accent">САПАЛЫ ЖОБА</span> <span class="separator">—</span>
+                <span>✦</span> <span class="accent">САПАЛЫ ЖОБА</span> <span class="separator">—</span>
+                <span>✦</span> <span class="accent">САПАЛЫ ЖОБА</span> <span class="separator">—</span>
             </div>
             <div class="marquee-item">
-                <span>✦</span> <span class="accent">САПАЛЫ ЖОБА</span> <span class="separator"></span>
-                <span>✦</span> <span class="accent">САПАЛЫ ЖОБА</span> <span class="separator"></span>
-                <span>✦</span> <span class="accent">САПАЛЫ ЖОБА</span> <span class="separator"></span>
-                <span>✦</span> <span class="accent">САПАЛЫ ЖОБА</span> <span class="separator"></span>
-                <span>✦</span> <span class="accent">САПАЛЫ ЖОБА</span> <span class="separator"></span>
+                <span>✦</span> <span class="accent">САПАЛЫ ЖОБА</span> <span class="separator">—</span>
+                <span>✦</span> <span class="accent">САПАЛЫ ЖОБА</span> <span class="separator">—</span>
+                <span>✦</span> <span class="accent">САПАЛЫ ЖОБА</span> <span class="separator">—</span>
+                <span>✦</span> <span class="accent">САПАЛЫ ЖОБА</span> <span class="separator">—</span>
+                <span>✦</span> <span class="accent">САПАЛЫ ЖОБА</span> <span class="separator">—</span>
             </div>
         </div>
     </section>
@@ -486,7 +486,7 @@
                     const fallbackProjects = [
                         { title: "ADAL AVTO", description: "СТО Қызметі", category: "Лендинг сайт", image: "adal.png" },
                         { title: "DELICIOUS", description: "Мейрамханаға арналган", category: "Көпбеттік сайт", image: "deli.png" },
-                        { title: "SAPAR-DUKEN", description: "Азық-түлік дүкені", category: "Интернет-дүкен", image: "sapar.png" },
+                        { title: "SAPAR-DUKEN", description: "Азық-түлік дүкені", category: "Інтернет-дүкен", image: "sapar.png" },
                         { title: "SMILE", description: "Тіс емдеу орталығы", category: "Курс платформасы", image: "smile.png" }
                     ];
                     renderProjects(fallbackProjects);
@@ -503,7 +503,18 @@
                     card.setAttribute('data-aos', 'fade-up');
                     card.setAttribute('data-aos-duration', '800');
                     card.setAttribute('data-aos-delay', delay);
-                    card.innerHTML = ;
+                    
+                    // === БҰЛ ЖЕРДЕГІ ҚАТЕ ТҮЗЕТІЛДІ ===
+                    card.innerHTML = `
+                        <div class="card-image" style="background-image: url('${project.image}');">
+                            <span class="fallback-text">ЖОБА</span>
+                        </div>
+                        <div class="card-body">
+                            <h3>${project.title}</h3>
+                            <p class="project-description">${project.description}</p>
+                            <p class="category">${project.category}</p>
+                        </div>
+                    `;
                     container.appendChild(card);
                 });
                 AOS.refresh(); 
