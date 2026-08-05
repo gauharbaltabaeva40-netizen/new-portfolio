@@ -503,16 +503,7 @@
                     card.setAttribute('data-aos', 'fade-up');
                     card.setAttribute('data-aos-duration', '800');
                     card.setAttribute('data-aos-delay', delay);
-                    card.innerHTML = `
-                        <div class="card-image" style="background-image: url('${project.image}');">
-                            <span class="fallback-text"></span>
-                        </div>
-                        <div class="card-body">
-                            <h3>${project.title}</h3>
-                            <p class="project-description">${project.description}</p>
-                            <p class="category">${project.category}</p>
-                        </div>
-                    `;
+                    card.innerHTML = ;
                     container.appendChild(card);
                 });
                 AOS.refresh(); 
