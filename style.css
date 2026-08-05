@@ -1,0 +1,128 @@
+        /* 1. HERO - Басты бет */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 90vh;
+            gap: 60px;
+            padding: 40px 0;
+            overflow: hidden; /* Фотоның шеті шығып кетпеуі үшін */
+        }
+
+        .hero-text {
+            flex: 1 1 52%;
+            z-index: 2;
+        }
+
+        .hero-text h1 {
+            font-size: 5.5rem;
+            font-weight: 700;
+            line-height: 1.05;
+            letter-spacing: -2px;
+            margin-bottom: 12px;
+            color: #FFFFFF;
+        }
+
+        .shimmer-text {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #FFFFFF;
+            background: linear-gradient(90deg, #fff 30%, #E8601C 50%, #fff 70%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 4s linear infinite;
+            display: inline-block;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+
+        .hero-text .description {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 480px;
+            margin: 24px 0 36px;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: #E8601C;
+            color: #fff;
+            border: none;
+            padding: 16px 38px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.25s, box-shadow 0.3s;
+            box-shadow: 0 4px 24px rgba(232, 96, 28, 0.3);
+            font-family: inherit;
+        }
+        .btn-primary:hover {
+            transform: scale(1.04);
+            box-shadow: 0 8px 40px rgba(232, 96, 28, 0.45);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #fff;
+            border: 1.5px solid rgba(255, 255, 255, 0.15);
+            padding: 16px 38px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.25s, border-color 0.3s, background 0.3s;
+            font-family: inherit;
+        }
+        .btn-outline:hover {
+            transform: scale(1.04);
+            border-color: #E8601C;
+            background: rgba(232, 96, 28, 0.06);
+        }
+
+        /* HERO Image - Қиылмайтын сурет */
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end; /* Сурет оң жақта */
+            align-items: flex-end;    /* Сурет төменгі жақта */
+            height: 90vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero-image img {
+            height: 100%;
+            max-height: 90vh;
+            width: auto;
+            /* contain: Суретті қиып алмай, толығымен көрсетеді */
+            object-fit: contain; 
+            object-position: right bottom; /* Асты оң жақта */
+            max-width: 100%;
+            display: block;
+        }
+
+        /* Төменгі жағынан жұмсақ қараю (Seamless transition) */
+        .hero-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 20%;
+            background: linear-gradient(to top, #0A0A0A 0%, transparent 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
