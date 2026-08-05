@@ -6,7 +6,7 @@
             min-height: 90vh;
             gap: 60px;
             padding: 40px 0;
-            overflow: hidden; /* Фотоның шеті шығып кетпеуі үшін */
+            position: relative;
         }
 
         .hero-text {
@@ -92,29 +92,28 @@
             background: rgba(232, 96, 28, 0.06);
         }
 
-        /* HERO Image - Қиылмайтын сурет */
+        /* HERO Image - Қиылмайтын, үлкен сурет */
         .hero-image {
             flex: 1;
             display: flex;
-            justify-content: flex-end; /* Сурет оң жақта */
-            align-items: flex-end;    /* Сурет төменгі жақта */
-            height: 90vh;
-            overflow: hidden;
+            justify-content: flex-end;
+            align-items: flex-end;
             position: relative;
         }
 
         .hero-image img {
-            height: 100%;
-            max-height: 90vh;
-            width: auto;
-            /* contain: Суретті қиып алмай, толығымен көрсетеді */
+            /* contain: Фотоның ешқандай бөлігі қиылмайды, толық көрінеді */
             object-fit: contain; 
-            object-position: right bottom; /* Асты оң жақта */
+            object-position: right bottom;
+            
+            /* Үлкен болуы үшін биіктікті 90%-ға қоямыз */
+            width: auto;
+            height: 90vh; 
             max-width: 100%;
             display: block;
         }
 
-        /* Төменгі жағынан жұмсақ қараю (Seamless transition) */
+        /* Төменгі жағынан фонмен бірігу (градиент) */
         .hero-image::after {
             content: '';
             position: absolute;
@@ -124,5 +123,5 @@
             height: 20%;
             background: linear-gradient(to top, #0A0A0A 0%, transparent 100%);
             pointer-events: none;
-            z-index: 1;
+            z-index: 2;
         }
