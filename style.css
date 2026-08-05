@@ -693,3 +693,29 @@ body::before {
 
     .contact-form { padding: 20px 16px; }
 }
+
+@media screen and (max-width: 768px) {
+    .hero {
+        flex-direction: column-reverse;
+        min-height: auto;
+        padding-top: 0;
+        gap: 20px;
+    }
+    .hero-text {
+        max-width: 100%;
+        text-align: center;
+    }
+    .hero-text h1 { font-size: 3rem; }
+    .hero-image {
+        height: 60vh !important;
+        width: 100%;
+        align-items: flex-end !important;
+        justify-content: center !important;
+    }
+    .hero-image img {
+        height: 60vh !important;
+        object-position: center bottom !important;
+        width: 100% !important;
+        object-fit: contain !important; /* Телефонда толығымен көріну үшін */
+    }
+}
