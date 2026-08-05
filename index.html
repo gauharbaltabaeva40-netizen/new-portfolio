@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Бекзат Шеметаев | Портфолио</title>
+
+    <!-- Google Fonts: Space Grotesk -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+    <style>
+        /* ===== ГЛОБАЛДЫ ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #0A0A0A;
+            color: #FFFFFF;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            width: 100%;
+        }
+
+        /* ===== 1. HERO ===== */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 90vh;
+            gap: 60px;
+            padding: 40px 0;
+        }
+
+        .hero-text {
+            flex: 1 1 52%;
+        }
+
+        .hero-text h1 {
+            font-size: 5.5rem;
+            font-weight: 700;
+            line-height: 1.05;
+            letter-spacing: -2px;
+            margin-bottom: 12px;
+            color: #FFFFFF;
+        }
+
+        .shimmer-text {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #FFFFFF;
+            background: linear-gradient(90deg, #fff 30%, #E8601C 50%, #fff 70%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 4s linear infinite;
+            display: inline-block;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+
+        .hero-text .description {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 480px;
+            margin: 24px 0 36px;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: #E8601C;
+            color: #fff;
+            border: none;
+            padding: 16px 38px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.25s, box-shadow 0.3s;
+            box-shadow: 0 4px 24px rgba(232, 96, 28, 0.3);
+            font-family: inherit;
+        }
+        .btn-primary:hover {
+            transform: scale(1.04);
+            box-shadow: 0 8px 40px rgba(232, 96, 28, 0.45);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #fff;
+            border: 1.5px solid rgba(255, 255, 255, 0.15);
+            padding: 16px 38px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.25s, border-color 0.3s, background 0.3s;
+            font-family: inherit;
+        }
+        .btn-outline:hover {
+            transform: scale(1.04);
+            border-color: #E8601C;
+            background: rgba(232, 96, 28, 0.06);
+        }
+
+        .hero-image {
+            flex: 1 1 48%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image .image-placeholder {
+            width: 100%;
+            max-width: 480px;
+            aspect-ratio: 1 / 1;
+            background: #1a1a1a;
+            border-radius: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            font-weight: 600;
+            color: #444;
+            letter-spacing: 2px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* ===== БӨЛГІШ ===== */
+        .divider {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 0 30px;
+        }
+        .divider-line {
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #E8601C, transparent);
+            border-radius: 2px;
+            opacity: 0.6;
+        }
+
+        /* ===== 2. ЕРЕКШЕ ЖҰМЫСТАРЫМ ===== */
+        .featured-section {
+            padding: 40px 0 80px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 48px;
+            flex-wrap: wrap;
+            gap: 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 20px;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            color: #FFFFFF;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .featured-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.08);
+            cursor: default;
+        }
+        .featured-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(232, 96, 28, 0.25);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-image {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background-color: #1a1a1a;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            font-weight: 600;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+        .card-image .fallback-text {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 8px 18px;
+            border-radius: 8px;
+            color: #888;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .card-body {
+            padding: 20px 24px 24px;
+        }
+        .card-body h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #FFFFFF;
+            letter-spacing: -0.3px;
+        }
+
+        .project-description {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.5;
+            margin-bottom: 8px;
+            font-weight: 400;
+        }
+
+        .category {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #E8601C;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            background: rgba(232, 96, 28, 0.10);
+            padding: 4px 14px;
+            border-radius: 50px;
+            border: 1px solid rgba(232, 96, 28, 0.15);
+        }
+
+        /* ===== 3. MARQUEE ===== */
+        .marquee-section {
+            padding: 30px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            overflow: hidden;
+            background: #0A0A0A;
+        }
+
+        .marquee-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            white-space: nowrap;
+            animation: marqueeScroll 25s linear infinite;
+            will-change: transform;
+        }
+
+        .marquee-item {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: 4px;
+            color: #FFFFFF;
+            text-transform: uppercase;
+        }
+
+        .marquee-item .accent {
+            color: #E8601C;
+        }
+
+        .marquee-item .separator {
+            color: rgba(255, 255, 255, 0.1);
+            font-size: 2.4rem;
+        }
+
+        @keyframes marqueeScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* ===== 4. ЖЕТІСТІКТЕРІМ ===== */
+        .stats-section {
+            padding: 60px 0 80px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 32px 24px;
+            text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.08);
+            cursor: default;
+        }
+        .stat-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(232, 96, 28, 0.25);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+        }
+
+        .stat-icon {
+            font-size: 2.2rem;
+            color: #E8601C;
+            margin-bottom: 12px;
+        }
+
+        .stat-number {
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 500;
+            margin-top: 6px;
+        }
+
+        /* =======================================================
+           * 5. БАҒАЛАР БӨЛІМІ (Шыны Карталар)
+           ======================================================= */
+        .pricing-section {
+            padding: 60px 0 80px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .price-card {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 24px 28px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .price-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(232, 96, 28, 0.4);
+            box-shadow: 0 0 30px rgba(232, 96, 28, 0.1);
+        }
+
+        .price-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+        }
+
+        .price-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #FFFFFF;
+        }
+
+        .price-number {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            white-space: nowrap;
+        }
+
+        .price-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 20px;
+        }
+
+        .price-features li {
+            display: flex;
+            align-items: center;
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .price-features li i {
+            color: #E8601C;
+            margin-right: 12px;
+            font-size: 0.9rem;
+        }
+
+        /* ===== 6. БАЙЛАНЫС (ФОРМА) ===== */
+        .contact-section {
+            padding: 60px 0 80px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .contact-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        .contact-form {
+            max-width: 560px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 40px 36px;
+            box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.08);
+        }
+
+        .contact-form .form-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .contact-form .form-subtitle {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.5);
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 6px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 14px 16px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            color: #FFFFFF;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #E8601C;
+            box-shadow: 0 0 0 3px rgba(232, 96, 28, 0.15);
+        }
+
+        .form-group select option {
+            background: #0A0A0A;
+            color: #FFFFFF;
+        }
+
+        .form-group input::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 16px;
+            background: #E8601C;
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: transform 0.25s, box-shadow 0.3s;
+            box-shadow: 0 4px 24px rgba(232, 96, 28, 0.3);
+            font-family: inherit;
+            margin-top: 8px;
+        }
+        .btn-submit:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 40px rgba(232, 96, 28, 0.45);
+        }
+
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .form-success i {
+            font-size: 3rem;
+            color: #22c55e;
+            margin-bottom: 12px;
+        }
+
+        .form-success p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* ===== 7. FOOTER ===== */
+        .footer-section {
+            padding: 40px 0 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #FFFFFF;
+            margin-bottom: 2px;
+        }
+
+        .footer-brand p {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin: 0;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 16px;
+        }
+
+        .footer-socials a {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1.2rem;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .footer-socials a:hover {
+            color: #E8601C;
+            transform: translateY(-3px);
+        }
+
+        .footer-copy {
+            width: 100%;
+            text-align: center;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.3);
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* ===== АДАПТИВ ===== */
+        @media screen and (max-width: 1024px) {
+            .hero-text h1 { font-size: 4rem; }
+            .shimmer-text { font-size: 1.3rem; }
+            .stats-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+            .stat-number { font-size: 2.8rem; }
+            .marquee-item { font-size: 2.2rem; }
+            .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media screen and (max-width: 768px) {
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                min-height: auto;
+                padding: 20px 0;
+                gap: 40px;
+            }
+            .hero-text h1 { font-size: 3.2rem; }
+            .shimmer-text { font-size: 1.2rem; }
+            .hero-text .description {
+                font-size: 1rem;
+                max-width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero-buttons { justify-content: center; }
+            .hero-image .image-placeholder { max-width: 300px; }
+
+            .featured-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-bottom: 32px;
+            }
+            .section-header h2 { font-size: 1.8rem; }
+            .card-body h3 { font-size: 1.1rem; }
+            .project-description { font-size: 0.9rem; }
+            .card-body { padding: 16px 18px 18px; }
+
+            .stats-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+            .stat-card { padding: 24px 16px; }
+            .stat-number { font-size: 2.4rem; }
+            .stat-label { font-size: 0.9rem; }
+            .stat-icon { font-size: 1.8rem; }
+
+            .marquee-item { font-size: 1.6rem; gap: 16px; letter-spacing: 2px; }
+            .marquee-wrapper { gap: 20px; }
+            .marquee-section { padding: 20px 0; }
+
+            .pricing-grid { grid-template-columns: 1fr; gap: 16px; }
+            .price-card { padding: 20px; }
+            .price-title { font-size: 1.3rem; }
+            .price-number { font-size: 1.8rem; }
+            .price-features { grid-template-columns: 1fr; gap: 10px; }
+
+            .contact-form { padding: 28px 20px; }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-socials {
+                justify-content: center;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .container { padding: 0 16px; }
+            .hero-text h1 { font-size: 2.4rem; }
+            .shimmer-text { font-size: 1rem; }
+            .btn-primary,
+            .btn-outline {
+                padding: 14px 24px;
+                font-size: 0.9rem;
+                width: 100%;
+                justify-content: center;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            .hero-buttons button { width: 100%; }
+            .section-header h2 { font-size: 1.5rem; }
+            .card-image { aspect-ratio: 4 / 3; }
+            .card-body h3 { font-size: 1rem; }
+            .project-description { font-size: 0.85rem; }
+            .category { font-size: 0.65rem; }
+
+            .stats-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+            .stat-number { font-size: 2rem; }
+            .stat-label { font-size: 0.8rem; }
+            .stat-icon { font-size: 1.5rem; }
+
+            .marquee-item { font-size: 1.2rem; gap: 12px; letter-spacing: 1px; }
+            .marquee-item .separator { font-size: 1.2rem; }
+
+            .price-card { padding: 16px; }
+            .price-title { font-size: 1.1rem; }
+            .price-number { font-size: 1.4rem; }
+            .price-features li { font-size: 0.85rem; }
+
+            .contact-form { padding: 20px 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========================================= -->
+    <!-- 1. HERO -->
+    <!-- ========================================= -->
+    <div class="container">
+        <section class="hero">
+            <div class="hero-text" data-aos="fade-up" data-aos-duration="800">
+                <h1 data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                    БЕКЗАТ<br />
+                    ШЕМЕТАЕВ
+                </h1>
+                <div class="shimmer-text" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    Веб-разработчик &amp; Дизайнер
+                </div>
+                <p class="description" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                    Бизнесіңізді цифрлық деңгейге көтеремін. <br />
+                    Стратегия, эстетика және технология — <br />
+                    менің жұмысымның негізі.
+                </p>
+                <div class="hero-buttons" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                    <button id="scrollToWorks" class="btn-primary">ЖҰМЫСТАРЫМДЫ КӨРУ</button>
+                    <button id="scrollToContact" class="btn-outline">БАЙЛАНЫС</button>
+                </div>
+            </div>
+            <div class="hero-image" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                <div class="image-placeholder">
+                    IMAGE
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ===== БӨЛГІШ ===== -->
+    <div class="container divider" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+        <div class="divider-line"></div>
+    </div>
+
+    <!-- ========================================= -->
+    <!-- 2. ЕРЕКШЕ ЖҰМЫСТАРЫМ -->
+    <!-- ========================================= -->
+    <section class="featured-section container" data-aos="fade-up" data-aos-duration="800">
+        <div class="section-header" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+            <h2>ЕРЕКШЕ ЖҰМЫСТАРЫМ</h2>
+        </div>
+
+        <div class="featured-grid">
+            <div class="featured-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
+                <div class="card-image" 
+                     data-aos="fade-left" 
+                     data-aos-duration="800" 
+                     data-aos-delay="200"
+                     style="background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&auto=format&fit=crop&q=80');">
+                    <span class="fallback-text">IMAGE</span>
+                </div>
+                <div class="card-body" data-aos="fade-up" data-aos-duration="800" data-aos-delay="250">
+                    <h3>MESRA</h3>
+                    <p class="project-description">Стартаптар мен кәсіпкерлерге арналған презентациялық лендинг беті.</p>
+                    <p class="category">Лендинг сайт</p>
+                </div>
+            </div>
+
+            <div class="featured-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="250">
+                <div class="card-image" 
+                     data-aos="fade-right" 
+                     data-aos-duration="800" 
+                     data-aos-delay="300"
+                     style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&auto=format&fit=crop&q=80');">
+                    <span class="fallback-text">IMAGE</span>
+                </div>
+                <div class="card-body" data-aos="fade-up" data-aos-duration="800" data-aos-delay="350">
+                    <h3>ДЕНСАУЛЫҚТЫ КӨТЕРУ</h3>
+                    <p class="project-description">Саулық саласындағы онлайн-қызметтерге арналған көпбеттік сайт.</p>
+                    <p class="category">Көпбеттік сайт</p>
+                </div>
+            </div>
+
+            <div class="featured-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="350">
+                <div class="card-image" 
+                     data-aos="fade-left" 
+                     data-aos-duration="800" 
+                     data-aos-delay="400"
+                     style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop&q=80');">
+                    <span class="fallback-text">IMAGE</span>
+                </div>
+                <div class="card-body" data-aos="fade-up" data-aos-duration="800" data-aos-delay="450">
+                    <h3>ҚАРЖЫЛЫҚ БРЕНДІҢІЗ</h3>
+                    <p class="project-description">Инвестициялық компаниялар үшін фирмалық интернет-дүкен.</p>
+                    <p class="category">Интернет-дүкен</p>
+                </div>
+            </div>
+
+            <div class="featured-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="450">
+                <div class="card-image" 
+                     data-aos="fade-right" 
+                     data-aos-duration="800" 
+                     data-aos-delay="500"
+                     style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop&q=80');">
+                    <span class="fallback-text">IMAGE</span>
+                </div>
+                <div class="card-body" data-aos="fade-up" data-aos-duration="800" data-aos-delay="550">
+                    <h3>COMPANION DASHBOARD</h3>
+                    <p class="project-description">Оқытушылар мен студенттерге арналған онлайн-курс платформасы.</p>
+                    <p class="category">Курс платформасы</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- 3. MARQUEE -->
+    <!-- ========================================= -->
+    <section class="marquee-section" data-aos="fade-up" data-aos-duration="800">
+        <div class="marquee-wrapper">
+            <div class="marquee-item">
+                <span>✦</span>
+                <span class="accent">САПАЛЫ ЖОБА</span>
+                <span class="separator">—</span>
+                <span>✦</span>
+                <span class="accent">САПАЛЫ ЖОБА</span>
+                <span class="separator">—</span>
+                <span>✦</span>
+                <span class="accent">САПАЛЫ ЖОБА</span>
+                <span class="separator">—</span>
+                <span>✦</span>
+                <span class="accent">САПАЛЫ ЖОБА</span>
+                <span class="separator">—</span>
+                <span>✦</span>
+                <span class="accent">САПАЛЫ ЖОБА</span>
+                <span class="separator">—</span>
+            </div>
+            <div class="marquee-item">
+                <span>✦</span>
+                <span class="accent">САПАЛЫ ЖОБА</span>
+                <span class="separator">—</span>
+                <span>✦</span>
+                <span class="accent">САПАЛЫ ЖОБА</span>
+                <span class="separator">—</span>
+                <span>✦</span>
+                <span class="accent">САПАЛЫ ЖОБА</span>
+                <span class="separator">—</span>
+                <span>✦</span>
+                <span class="accent">САПАЛЫ ЖОБА</span>
+                <span class="separator">—</span>
+                <span>✦</span>
+                <span class="accent">САПАЛЫ ЖОБА</span>
+                <span class="separator">—</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- 4. ЖЕТІСТІКТЕРІМ -->
+    <!-- ========================================= -->
+    <section class="stats-section container" data-aos="fade-up" data-aos-duration="800">
+        <div class="section-header" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+            <h2>ЖЕТІСТІКТЕРІМ</h2>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
+                <div class="stat-icon"><i class="fas fa-briefcase"></i></div>
+                <div class="stat-number" data-target="2">2</div>
+                <div class="stat-label">Жыл тәжірибе</div>
+            </div>
+
+            <div class="stat-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="250">
+                <div class="stat-icon"><i class="fas fa-code"></i></div>
+                <div class="stat-number" data-target="50">50</div>
+                <div class="stat-label">Жоба аяқталды</div>
+            </div>
+
+            <div class="stat-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="350">
+                <div class="stat-icon"><i class="fas fa-project-diagram"></i></div>
+                <div class="stat-number" data-target="45">45</div>
+                <div class="stat-label">Масштабталған жоба</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== БӨЛГІШ ===== -->
+    <div class="container divider" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+        <div class="divider-line"></div>
+    </div>
+
+    <!-- ========================================= -->
+    <!-- 5. БАҒАЛАР -->
+    <!-- ========================================= -->
+    <section class="pricing-section container" data-aos="fade-up" data-aos-duration="800">
+        <div class="section-header" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+            <h2>БАҒАЛАР</h2>
+        </div>
+
+        <div class="pricing-grid">
+            <!-- Баға 1 -->
+            <div class="price-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
+                <div class="price-header">
+                    <div class="price-title">Лендинг<br />сайт</div>
+                    <div class="price-number" data-target="99">99$</div>
+                </div>
+                <ul class="price-features">
+                    <li><i class="fas fa-check"></i> Жоғары конверсия</li>
+                    <li><i class="fas fa-check"></i> Жылдам жүктелу</li>
+                    <li><i class="fas fa-check"></i> Мобильді дизайн</li>
+                    <li><i class="fas fa-check"></i> 1 бет</li>
+                </ul>
+            </div>
+
+            <!-- Баға 2 -->
+            <div class="price-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="250">
+                <div class="price-header">
+                    <div class="price-title">Көпбеттік<br />сайт</div>
+                    <div class="price-number" data-target="799">799$</div>
+                </div>
+                <ul class="price-features">
+                    <li><i class="fas fa-check"></i> 5-10 бет</li>
+                    <li><i class="fas fa-check"></i> Кәсіби корп. стиль</li>
+                    <li><i class="fas fa-check"></i> CRM интеграция</li>
+                    <li><i class="fas fa-check"></i> 1 түзету раунды</li>
+                </ul>
+            </div>
+
+            <!-- Баға 3 -->
+            <div class="price-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="350">
+                <div class="price-header">
+                    <div class="price-title">Интернет-<br />дүкен</div>
+                    <div class="price-number" data-target="599">599$</div>
+                </div>
+                <ul class="price-features">
+                    <li><i class="fas fa-check"></i> Тауар каталогы</li>
+                    <li><i class="fas fa-check"></i> Төлем жүйесі</li>
+                    <li><i class="fas fa-check"></i> Әкімшілік панель</li>
+                    <li><i class="fas fa-check"></i> Тапсырыс қабылдау</li>
+                </ul>
+            </div>
+
+            <!-- Баға 4 -->
+            <div class="price-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="450">
+                <div class="price-header">
+                    <div class="price-title">Курс<br />платформасы</div>
+                    <div class="price-number" data-target="499">499$</div>
+                </div>
+                <ul class="price-features">
+                    <li><i class="fas fa-check"></i> Видеосабақтар</li>
+                    <li><i class="fas fa-check"></i> Тіркеу жүйесі</li>
+                    <li><i class="fas fa-check"></i> Тестілеу модулі</li>
+                    <li><i class="fas fa-check"></i> Сертификаттау</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== БӨЛГІШ ===== -->
+    <div class="container divider" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+        <div class="divider-line"></div>
+    </div>
+
+    <!-- ========================================= -->
+    <!-- 6. БАЙЛАНЫС (ФОРМА) -->
+    <!-- ========================================= -->
+    <section class="contact-section container" data-aos="fade-up" data-aos-duration="800">
+        <div class="section-header" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+            <h2>БАЙЛАНЫС</h2>
+        </div>
+
+        <div class="contact-wrapper">
+            <div class="contact-form" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
+                <div class="form-title">Жобаңызды талқылайық</div>
+                <div class="form-subtitle">Төмендегі форманы толтырып, менімен байланысыңыз</div>
+
+                <form id="contactForm" onsubmit="sendToWhatsApp(event)">
+                    <div class="form-group">
+                        <label for="clientName">Аты-жөніңіз</label>
+                        <input type="text" id="clientName" placeholder="Мысалы: Арман Қуанышов" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="siteType">Қандай сайт қажет?</label>
+                        <select id="siteType" required>
+                            <option value="">-- Таңдаңыз --</option>
+                            <option value="Лендинг сайт">Лендинг сайт</option>
+                            <option value="Көп беттік сайт">Көп беттік сайт</option>
+                            <option value="Интернет-дүкен">Интернет-дүкен</option>
+                            <option value="Курс платформасы">Курс платформасы</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="clientIndustry">Қандай сала?</label>
+                        <input type="text" id="clientIndustry" placeholder="Мысалы: Медицина, Қаржы, Білім беру..." required />
+                    </div>
+
+                    <button type="submit" class="btn-submit">
+                        <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> WhatsApp-қа жіберу
+                    </button>
+                </form>
+
+                <div class="form-success" id="formSuccess">
+                    <i class="fas fa-check-circle"></i>
+                    <p>Сұрағыңыз WhatsApp-қа жіберілді! <br />Жауапты күтіңіз.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- 7. FOOTER -->
+    <!-- ========================================= -->
+    <footer class="footer-section">
+        <div class="container footer-content" data-aos="fade-up" data-aos-duration="800">
+            <div class="footer-brand">
+                <h3>Бекзат Шеметаев</h3>
+                <p>Веб-разработчик &amp; Дизайнер</p>
+            </div>
+            <div class="footer-socials">
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <div class="footer-copy">
+                &copy; 2026 Бекзат Шеметаев. Барлық құқықтар қорғалған.
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================= -->
+    <!-- AOS JS + ТОЛЫҚ ЖАВА СКРИПТ (Бірыңғай) -->
+    <!-- ========================================= -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Бет жүктелген кезде барлық анимациялар мен кнопкалар іске қосылады
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // 1. AOS инициализациясы
+            AOS.init({ once: true, offset: 100 });
+
+            // 2. Кнопкалардың переходтары (скролл)
+            const worksBtn = document.getElementById('scrollToWorks');
+            const contactBtn = document.getElementById('scrollToContact');
+
+            if (worksBtn) {
+                worksBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector('.featured-section');
+                    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            }
+            if (contactBtn) {
+                contactBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector('.contact-section');
+                    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            }
+
+            // 3. БАРЛЫҚ САНДАРДЫ САНАУ АНИМАЦИЯСЫ (Counting)
+            function animateCounter(el, target, suffix, duration = 2000) {
+                let startTime = null;
+                const cleanTarget = parseInt(target, 10);
+                
+                function step(timestamp) {
+                    if (!startTime) startTime = timestamp;
+                    const progress = Math.min((timestamp - startTime) / duration, 1);
+                    // Жылдамдықты біртіндеп баяулату (Ease Out)
+                    const currentValue = Math.floor(0 + (cleanTarget - 0) * (1 - Math.pow(1 - progress, 3)));
+                    
+                    el.textContent = currentValue + suffix;
+
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    } else {
+                        el.textContent = target + suffix; // Соңғы мәнге дәл келтіру
+                    }
+                }
+                window.requestAnimationFrame(step);
+            }
+
+            // data-target атрибуты бар барлық элементтерді табу (Статистика мен Бағалар)
+            const countElements = document.querySelectorAll('[data-target]');
+            if (countElements.length > 0) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const el = entry.target;
+                            const target = el.getAttribute('data-target');
+                            // Санды алып тастап, қалған символдарды (мысалы, $ немесе +) сақтау
+                            const suffix = el.textContent.replace(/[0-9]/g, '');
+                            
+                            observer.unobserve(el);
+                            animateCounter(el, target, suffix, 2200); // 2.2 секунд
+                        }
+                    });
+                }, { threshold: 0.4 });
+                
+                countElements.forEach(el => observer.observe(el));
+            }
+        });
+
+        // 4. WhatsApp-қа жіберу функциясы (Глобальды болуы керек)
+        function sendToWhatsApp(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('clientName').value.trim();
+            const siteType = document.getElementById('siteType').value;
+            const industry = document.getElementById('clientIndustry').value.trim();
+
+            if (!name || !siteType || !industry) {
+                alert('Барлық өрістерді толтырыңыз!');
+                return;
+            }
+
+            const whatsappNumber = '77052973225';
+            const message = `Сәлеметсіз бе! Мен жоба туралы талқылағым келеді.\n\nАтым: ${name}\nСала: ${industry}\nҚажет сайт түрі: ${siteType}\n\nМаған кері байланыс жасаңыз. Рақмет!`;
+            
+            const encoded = encodeURIComponent(message);
+            window.open(`https://wa.me/${whatsappNumber}?text=${encoded}`, '_blank');
+
+            document.getElementById('contactForm').style.display = 'none';
+            document.getElementById('formSuccess').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
