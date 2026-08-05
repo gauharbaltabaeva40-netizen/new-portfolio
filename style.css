@@ -1,0 +1,695 @@
+/* =========================================
+   ПРЕМИУМ CSS АЙНЫМАЛЫЛАРЫ (VARIABLES)
+   ========================================= */
+:root {
+    --primary-color: #E8601C;
+    --primary-glow: rgba(232, 96, 28, 0.25);
+    --bg-dark: #0A0A0A;
+    --bg-card: rgba(255, 255, 255, 0.03);
+    --border-card: rgba(255, 255, 255, 0.06);
+    --border-hover: rgba(232, 96, 28, 0.4);
+    --text-main: #FFFFFF;
+    --text-muted: rgba(255, 255, 255, 0.6);
+    --text-placeholder: rgba(255, 255, 255, 0.3);
+    --shadow-card: 0 20px 60px rgba(0, 0, 0, 0.3);
+    --shadow-hover: 0 30px 80px rgba(0, 0, 0, 0.6);
+    --radius-card: 16px;
+    --radius-glass: 20px;
+    --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* =========================================
+   ГЛОБАЛДЫ СТИЛЬДЕР
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Фондағы премиум жарқыл (background glow) */
+body::before {
+    content: '';
+    position: fixed;
+    top: -25%;
+    left: -15%;
+    width: 70%;
+    height: 70%;
+    background: radial-gradient(circle, rgba(232, 96, 28, 0.07) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    width: 100%;
+}
+
+/* =========================================
+   1. HERO - БАСТЫ БЕТ
+   ========================================= */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 90vh;
+    gap: 60px;
+    padding: 40px 0;
+}
+
+.hero-text {
+    flex: 1 1 52%;
+}
+
+.hero-text h1 {
+    font-size: 5.5rem;
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -2px;
+    margin-bottom: 12px;
+    color: var(--text-main);
+}
+
+.shimmer-text {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    background: linear-gradient(90deg, #fff 30%, var(--primary-color) 50%, #fff 70%);
+    background-size: 250% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 4s linear infinite;
+    display: inline-block;
+}
+
+@keyframes shimmer {
+    0% { background-position: -250% center; }
+    100% { background-position: 250% center; }
+}
+
+.hero-text .description {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 480px;
+    margin: 24px 0 36px;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.btn-primary, .btn-outline, .btn-submit {
+    padding: 16px 38px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    font-family: inherit;
+    border: none;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: #fff;
+    box-shadow: 0 4px 24px var(--primary-glow);
+}
+.btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 40px var(--primary-glow);
+}
+
+.btn-outline {
+    background: transparent;
+    color: #fff;
+    border: 1.5px solid var(--border-card);
+}
+.btn-outline:hover {
+    transform: scale(1.05);
+    border-color: var(--primary-color);
+    background: rgba(232, 96, 28, 0.08);
+}
+
+.hero-image {
+    flex: 1 1 48%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image .image-placeholder {
+    width: 100%;
+    max-width: 480px;
+    aspect-ratio: 1 / 1;
+    background: #1a1a1a;
+    border-radius: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #444;
+    letter-spacing: 2px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+    border: 1px solid var(--border-card);
+}
+
+/* =========================================
+   БӨЛГІШ (DIVIDER)
+   ========================================= */
+.divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0 30px;
+}
+.divider-line {
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+    border-radius: 2px;
+    opacity: 0.6;
+}
+
+/* =========================================
+   2. ЕРЕКШЕ ЖҰМЫСТАРЫМ (PORTFOLIO)
+   ========================================= */
+.featured-section { padding: 40px 0 80px; }
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+    gap: 16px;
+    border-bottom: 1px solid var(--border-card);
+    padding-bottom: 20px;
+}
+
+.section-header h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: var(--text-main);
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.featured-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    transition: var(--transition-smooth);
+    box-shadow: var(--shadow-card);
+    cursor: default;
+}
+.featured-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    border-color: var(--border-hover);
+    box-shadow: var(--shadow-hover);
+}
+
+.card-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: #1a1a1a;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    font-weight: 600;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.card-image .fallback-text {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 8px 18px;
+    border-radius: 8px;
+    color: #888;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card-body { padding: 20px 24px 24px; }
+.card-body h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--text-main);
+    letter-spacing: -0.3px;
+}
+
+.project-description {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 8px;
+    font-weight: 400;
+}
+
+.category {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    background: rgba(232, 96, 28, 0.10);
+    padding: 4px 14px;
+    border-radius: 50px;
+    border: 1px solid rgba(232, 96, 28, 0.15);
+}
+
+/* =========================================
+   3. MARQUEE (ЖҮГІРМЕ)
+   ========================================= */
+.marquee-section {
+    padding: 30px 0;
+    border-top: 1px solid var(--border-card);
+    border-bottom: 1px solid var(--border-card);
+    overflow: hidden;
+    background: var(--bg-dark);
+}
+
+.marquee-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    white-space: nowrap;
+    animation: marqueeScroll 25s linear infinite;
+    will-change: transform;
+}
+
+.marquee-item {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: var(--text-main);
+    text-transform: uppercase;
+}
+
+.marquee-item .accent { color: var(--primary-color); }
+.marquee-item .separator { color: rgba(255, 255, 255, 0.1); font-size: 2.4rem; }
+
+@keyframes marqueeScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* =========================================
+   4. ЖЕТІСТІКТЕРІМ (STATS)
+   ========================================= */
+.stats-section { padding: 60px 0 80px; }
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-card);
+    padding: 32px 24px;
+    text-align: center;
+    transition: var(--transition-smooth);
+    box-shadow: var(--shadow-card);
+    cursor: default;
+}
+.stat-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: var(--border-hover);
+    box-shadow: var(--shadow-hover);
+}
+
+.stat-icon { font-size: 2.2rem; color: var(--primary-color); margin-bottom: 12px; }
+.stat-number {
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: var(--text-main);
+    letter-spacing: -1px;
+    line-height: 1.1;
+}
+.stat-number .plus { color: var(--primary-color); font-weight: 700; }
+.stat-label {
+    font-size: 1rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-top: 6px;
+}
+
+/* =========================================
+   5. БАҒАЛАР (PRICES)
+   ========================================= */
+.pricing-section {
+    padding: 60px 0 80px;
+    border-top: 1px solid var(--border-card);
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.price-card {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-glass);
+    padding: 28px 32px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+    transition: var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+}
+.price-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    border-color: var(--border-hover);
+    box-shadow: 0 0 40px var(--primary-glow);
+}
+
+.price-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding-bottom: 16px;
+    margin-bottom: 20px;
+}
+
+.price-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text-main);
+}
+.price-number {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--text-main);
+    white-space: nowrap;
+}
+
+.price-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 20px;
+}
+
+.price-features li {
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+.price-features li i {
+    color: var(--primary-color);
+    margin-right: 12px;
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   6. БАЙЛАНЫС (ФОРМА)
+   ========================================= */
+.contact-section {
+    padding: 60px 0 80px;
+    border-top: 1px solid var(--border-card);
+}
+
+.contact-wrapper { display: flex; justify-content: center; }
+
+.contact-form {
+    max-width: 560px;
+    width: 100%;
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-card);
+    padding: 40px 36px;
+    box-shadow: var(--shadow-card);
+}
+
+.contact-form .form-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.contact-form .form-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.form-group { margin-bottom: 20px; }
+
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 14px 16px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-card);
+    border-radius: 12px;
+    color: var(--text-main);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(232, 96, 28, 0.15);
+}
+
+.form-group select option { background: #0A0A0A; color: #FFFFFF; }
+.form-group input::placeholder { color: var(--text-placeholder); }
+
+.btn-submit {
+    width: 100%;
+    padding: 16px;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    box-shadow: 0 4px 24px var(--primary-glow);
+    font-family: inherit;
+    margin-top: 8px;
+}
+.btn-submit:hover {
+    transform: scale(1.02) translateY(-2px);
+    box-shadow: 0 10px 40px var(--primary-glow);
+}
+
+.form-success {
+    display: none;
+    text-align: center;
+    padding: 20px 0;
+}
+.form-success i { font-size: 3rem; color: #22c55e; margin-bottom: 12px; }
+.form-success p { font-size: 1.1rem; color: rgba(255, 255, 255, 0.7); }
+
+/* =========================================
+   7. FOOTER - ФУТЕР
+   ========================================= */
+.footer-section {
+    padding: 40px 0 20px;
+    border-top: 1px solid var(--border-card);
+    margin-top: 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-brand h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 2px;
+}
+.footer-brand p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.footer-socials { display: flex; gap: 16px; }
+.footer-socials a {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    transition: color 0.3s, transform 0.3s;
+}
+.footer-socials a:hover {
+    color: var(--primary-color);
+    transform: translateY(-3px) scale(1.1);
+}
+
+.footer-copy {
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.3);
+    padding-top: 20px;
+    border-top: 1px solid var(--border-card);
+}
+
+/* =========================================
+   8. МЕДИА-СҰРАНЫСТАР (АДАПТИВ)
+   ========================================= */
+@media screen and (max-width: 1024px) {
+    .hero-text h1 { font-size: 4rem; }
+    .shimmer-text { font-size: 1.3rem; }
+    .stats-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .stat-number { font-size: 2.8rem; }
+    .marquee-item { font-size: 2.2rem; }
+    .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media screen and (max-width: 768px) {
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        min-height: auto;
+        padding: 20px 0;
+        gap: 40px;
+    }
+    .hero-text h1 { font-size: 3.2rem; }
+    .shimmer-text { font-size: 1.2rem; }
+    .hero-text .description {
+        font-size: 1rem;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .hero-buttons { justify-content: center; }
+    .hero-image .image-placeholder { max-width: 300px; }
+
+    .featured-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 32px;
+    }
+    .section-header h2 { font-size: 1.8rem; }
+    .card-body h3 { font-size: 1.1rem; }
+    .project-description { font-size: 0.9rem; }
+    .card-body { padding: 16px 18px 18px; }
+
+    .stats-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+    .stat-card { padding: 24px 16px; }
+    .stat-number { font-size: 2.4rem; }
+    .stat-label { font-size: 0.9rem; }
+    .stat-icon { font-size: 1.8rem; }
+
+    .marquee-item { font-size: 1.6rem; gap: 16px; letter-spacing: 2px; }
+    .marquee-wrapper { gap: 20px; }
+    .marquee-section { padding: 20px 0; }
+
+    .pricing-grid { grid-template-columns: 1fr; gap: 16px; }
+    .price-card { padding: 20px; }
+    .price-title { font-size: 1.3rem; }
+    .price-number { font-size: 1.8rem; }
+    .price-features { grid-template-columns: 1fr; gap: 10px; }
+
+    .contact-form { padding: 28px 20px; }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-socials { justify-content: center; }
+}
+
+@media screen and (max-width: 480px) {
+    .container { padding: 0 16px; }
+    .hero-text h1 { font-size: 2.4rem; }
+    .shimmer-text { font-size: 1rem; }
+    .btn-primary, .btn-outline, .btn-submit {
+        padding: 14px 24px;
+        font-size: 0.9rem;
+        width: 100%;
+        justify-content: center;
+    }
+    .hero-buttons { flex-direction: column; width: 100%; }
+    .hero-buttons button { width: 100%; }
+    .section-header h2 { font-size: 1.5rem; }
+    .card-image { aspect-ratio: 4 / 3; }
+    .card-body h3 { font-size: 1rem; }
+    .project-description { font-size: 0.85rem; }
+    .category { font-size: 0.65rem; }
+
+    .stats-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .stat-number { font-size: 2rem; }
+    .stat-label { font-size: 0.8rem; }
+    .stat-icon { font-size: 1.5rem; }
+
+    .marquee-item { font-size: 1.2rem; gap: 12px; letter-spacing: 1px; }
+    .marquee-item .separator { font-size: 1.2rem; }
+
+    .price-card { padding: 16px; }
+    .price-title { font-size: 1.1rem; }
+    .price-number { font-size: 1.4rem; }
+    .price-features li { font-size: 0.85rem; }
+
+    .contact-form { padding: 20px 16px; }
+}
