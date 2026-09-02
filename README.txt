@@ -4,7 +4,7 @@ BEKZAT PORTFOLIO — HTML/CSS/JAVASCRIPT
 - index.html — сайттың құрылымы және мәтіндері
 - style.css — дизайн мен мобильді бейімдеу
 - script.js — мобильді мәзір, анимация және жыл
-- assets/case-cleaning.png — клининг кейсінің скриншоты
+- case-cleaning.png — клининг кейсінің скриншоты
 
 Қалай ашу керек:
 1. Архивті толық шығарыңыз.
