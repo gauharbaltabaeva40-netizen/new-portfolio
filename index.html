@@ -42,32 +42,39 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Негізгі мазмұнға өту</a>
   <header class="header">
     <a class="brand" href="#top"><b>B</b><span>Bekzat<small>Web studio</small></span></a>
-    <button class="menu-button" type="button" aria-label="Мәзірді ашу" aria-expanded="false">☰</button>
-    <nav class="nav" aria-label="Негізгі навигация">
+    <button class="menu-button" type="button" aria-label="Мәзірді ашу" aria-controls="site-nav" aria-expanded="false">☰</button>
+    <nav class="nav" id="site-nav" aria-label="Негізгі навигация">
       <a href="#case">Кейс</a><a href="#works">Жұмыстар</a><a href="#pricing">Баға</a><a href="#process">Процесс</a><a href="#faq">FAQ</a>
     </nav>
     <a class="header-cta" href="#contact">Талдау алу ↗</a>
   </header>
 
-  <main>
+  <main id="main-content">
     <section class="hero" id="top">
       <div class="grid-bg"></div>
       <div class="shell hero-layout">
         <div class="hero-copy reveal">
-          <p class="eyebrow"><i></i> Астана · Қазақстан бойынша</p>
+          <p class="eyebrow"><i aria-hidden="true"></i> Астана · Қазақстан бойынша</p>
           <h1>5 күнде бизнесіңізге <em>өтінім қабылдауға дайын сайт</em></h1>
           <p class="lead">Мәтін, дизайн, мобильді нұсқа және іске қосу — бір жерде. Қазақстан бойынша жұмыс істеймін.</p>
           <div class="actions">
             <a class="button primary" href="#contact">Тегін 10 минуттық талдау алу ↗</a>
             <a class="button ghost" href="#works">Жұмыстарды көру</a>
           </div>
-          <div class="proof"><div><strong>5–10</strong><span>дайын демо</span></div><div><strong>01</strong><span>нақты бизнес-кейс</span></div><div><strong>100%</strong><span>мобильді нұсқа</span></div></div>
+          <div class="proof"><div><strong>05</strong><span>жұмыс күні</span></div><div><strong>01</strong><span>нақты бизнес-кейс</span></div><div><strong>100%</strong><span>мобильді нұсқа</span></div></div>
         </div>
         <div class="launch-card reveal">
-          <div class="launch-top"><span>Жобаны іске қосу</span><span>● Бос орын бар</span></div>
-          <strong class="five">05</strong><p>жұмыс күні</p>
+          <div class="launch-top"><span>Жобаны іске қосу</span><span><i class="status-dot" aria-hidden="true"></i> Бос орын бар</span></div>
+          <div class="launch-dashboard" aria-hidden="true">
+            <div class="dashboard-window">
+              <div class="window-bar"><span></span><span></span><span></span><b>yourbusiness.kz</b></div>
+              <div class="window-body"><small>САЙТТЫҢ НЕГІЗГІ МАҚСАТЫ</small><strong>Клиент сізді<br><em>бірден түсінеді.</em></strong><div class="window-stat"><span>CTA дайын</span><b>100%</b></div><div class="window-line wide"></div><div class="window-line"></div></div>
+            </div>
+          </div>
+          <div class="launch-result"><strong class="five">05</strong><p>жұмыс күні</p></div>
           <ul><li>✓ Мәтін және дизайн</li><li>✓ Телефонға бейімдеу</li><li>✓ Доменге шығару</li></ul>
         </div>
       </div>
@@ -85,9 +92,9 @@
 
     <section class="case" id="case">
       <div class="shell">
-        <div class="case-title"><p class="kicker">Нақты кейс · Premium Clean Astana</p><h2>Таргеттен келген адамға ұсынысты түсіндіретін сайт.</h2></div>
+        <div class="case-title"><p class="kicker">Нақты кейс · Premium Clean Astana</p><h2>Клиентке ұсынысты бірінші экранда түсіндіретін сайт.</h2></div>
         <div class="case-layout">
-          <div class="browser reveal"><div class="browser-top"><span>● ● ●</span><small>Premium Clean Astana</small></div><img src="assets/case-cleaning.png" alt="Premium Clean Astana сайтының көрінісі"></div>
+          <div class="browser reveal"><div class="browser-top"><span>● ● ●</span><small>Premium Clean Astana</small></div><img src="assets/case-cleaning.png" alt="Premium Clean Astana сайтының көрінісі"><a class="browser-link" href="https://premium-clean-astana.vercel.app/" target="_blank" rel="noopener">Кейсті ашу ↗</a></div>
           <div class="case-copy reveal"><small>Бастапқы мәселе</small><h3>Жарнама бюджеті жұмсалып жатты, бірақ сататын толық бет болмады.</h3><p>Клиент Instagram таргетінен күткен нәтижені көрмеген соң, Google жарнамасына арналған түсінікті лендинг қажет деп шешті.</p><div class="case-points"><div><b>Ұсыныс</b><span>Қызмет пен бастапқы баға көрінеді.</span></div><div><b>Mobile first</b><span>Телефонда ыңғайлы ашылады.</span></div><div><b>WhatsApp CTA</b><span>Бір әрекетпен өтінімге өтеді.</span></div><div><b>Жарнамаға дайын</b><span>Google Ads үшін жеке бет.</span></div></div><div class="result"><small>Дайын нәтиже</small><strong>1 толық лендинг</strong><span>Нақты өтінім көрсеткіштері өлшеніп жатыр.</span></div></div>
         </div>
       </div>
@@ -96,20 +103,21 @@
     <section class="section shell works-showcase" id="works">
       <div class="works-intro">
         <div><p class="kicker">Таңдаулы жобалар</p><h2>Жұмыстарым</h2></div>
-        <div class="works-filters" aria-label="Жобаларды сүзу">
-          <button class="works-filter is-active" type="button" data-filter="all">Барлығы</button>
-          <button class="works-filter" type="button" data-filter="business">Бизнес</button>
-          <button class="works-filter" type="button" data-filter="education">Білім</button>
-          <button class="works-filter" type="button" data-filter="creative">Креатив</button>
+        <div class="works-filters" aria-label="Жобаларды сүзу" role="group">
+          <button class="works-filter is-active" type="button" data-filter="all" aria-pressed="true">Барлығы</button>
+          <button class="works-filter" type="button" data-filter="business" aria-pressed="false">Бизнес</button>
+          <button class="works-filter" type="button" data-filter="education" aria-pressed="false">Білім</button>
+          <button class="works-filter" type="button" data-filter="creative" aria-pressed="false">Креатив</button>
         </div>
       </div>
+      <p class="filter-status" id="works-status" aria-live="polite">6 жоба көрсетілуде</p>
       <div class="works-grid">
         <article class="work-card is-static reveal" data-category="business">
           <div class="work-preview"><img src="assets/case-cleaning.png" alt="Premium Clean Astana клининг сайты" loading="lazy"></div>
           <div class="work-meta"><div><small>Нақты жоба · Клининг</small><h3>Premium Clean</h3></div><span class="work-arrow" aria-hidden="true">01</span></div>
         </article>
         <a class="work-card reveal" data-category="creative" href="https://maulenkhan.vercel.app/" target="_blank" rel="noopener">
-          <div class="work-preview"><img src="assets/maulenkhan.png" alt="Maulenkhan креатив продюсер портфолиосы" loading="lazy"></div>
+          <div class="work-preview"><div class="work-placeholder maulenkhan"><b>Maulenkhan</b><small>Креатив продюсер портфолиосы</small></div></div>
           <div class="work-meta"><div><small>Демо · Жеке бренд</small><h3>Maulenkhan</h3></div><span class="work-arrow" aria-hidden="true">↗</span></div>
         </a>
         <article class="work-card is-static reveal" data-category="education">
@@ -155,19 +163,8 @@
     <section class="contact" id="contact"><div class="grid-bg"></div><div class="shell contact-layout"><div><p class="kicker">Жобаны бастайық</p><h2>Қандай сайт керек екенін <em>10 минутта</em> анықтайық.</h2><p>Мақсатты, ұсынысты және сайт құрылымын бірге нақтылаймыз.</p></div><div class="contact-links"><a href="https://www.instagram.com/bekzat_dev/" target="_blank" rel="noopener"><span><small>Instagram</small><b>@bekzat_dev</b></span>↗</a><a href="https://t.me/bekzat_develop" target="_blank" rel="noopener"><span><small>Telegram</small><b>@bekzat_develop</b></span>↗</a><a href="https://wa.me/77052973225?text=%D0%A1%D3%99%D0%BB%D0%B5%D0%BC%D0%B5%D1%82%D1%81%D1%96%D0%B7%20%D0%B1%D0%B5!%20%D0%9C%D0%B0%D2%93%D0%B0%D0%BD%20%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81%D1%96%D0%BC%D0%B5%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%BA%D0%B5%D1%80%D0%B5%D0%BA." target="_blank" rel="noopener"><span><small>WhatsApp</small><b>+7 705 297 3225</b></span>↗</a></div></div></section>
   </main>
 
+  <a class="floating-whatsapp" href="https://wa.me/77052973225?text=%D0%A1%D3%99%D0%BB%D0%B5%D0%BC%D0%B5%D1%82%D1%81%D1%96%D0%B7%20%D0%B1%D0%B5!%20%D0%9C%D0%B0%D2%93%D0%B0%D0%BD%20%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81%D1%96%D0%BC%D0%B5%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%BA%D0%B5%D1%80%D0%B5%D0%BA." target="_blank" rel="noopener" aria-label="WhatsApp арқылы жазу"><span>Жоба жайлы сөйлесейік</span><b>↗</b></a>
   <footer><div class="shell footer"><a class="brand" href="#top"><b>B</b><span>Bekzat<small>Web studio</small></span></a><p>© <span id="year">2026</span> · Қазақстан бойынша сайт жасау</p><span>Астана</span></div></footer>
   <script src="script.js"></script>
-  <script>
-    document.querySelectorAll('.works-filter').forEach((button) => {
-      button.addEventListener('click', () => {
-        document.querySelectorAll('.works-filter').forEach((item) => item.classList.remove('is-active'));
-        button.classList.add('is-active');
-        const selected = button.dataset.filter;
-        document.querySelectorAll('.work-card').forEach((card) => {
-          card.hidden = selected !== 'all' && card.dataset.category !== selected;
-        });
-      });
-    });
-  </script>
 </body>
 </html>
